@@ -35,3 +35,16 @@ Function.prototype.myApply = function(context={}, args=[]) {
     context.fn = this;
     context.fn(...args);
 }
+
+// example
+
+let car1 = {
+    color: "Red",
+    company: "Ferrari"
+};
+
+function purchaseCar(currency, price) {
+    console.log(`I have purchased ${this.color} - ${this.company} car for ${currency}${price}`);
+}
+
+purchaseCar.call(car1, "$", 5000000);
