@@ -1,0 +1,21 @@
+.meme-body-ctr {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.meme-img {
+  height: 250px;
+  width: 250px;
+}
+
+.meme-ctr {
+  padding: 25px;
+  margin: 25px;
+  border: 1px solid black;
+}
+
+.meme-img-dummy {
+  height: 250px;
+  width: 250px;
+  background-color: lightgray;
+}
