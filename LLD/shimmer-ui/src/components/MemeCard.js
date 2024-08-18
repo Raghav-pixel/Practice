@@ -1,7 +1,6 @@
 import React from 'react'
 
 const MemeCard = ({ meme }) => {
-    console.log(meme);
     const { url, title, author } = meme;
   return (
     <div className='meme-ctr'>
