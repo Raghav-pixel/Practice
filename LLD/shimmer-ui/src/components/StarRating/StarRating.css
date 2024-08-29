@@ -1,0 +1,37 @@
+body {
+    background-color: rgb(244, 236, 244);
+  }
+  
+  .star-rating-filled {
+    fill: gold;
+  }
+  
+  .star-rating-blank {
+    fill: #d8d8d8;
+  }
+
+  .star-rating-half {
+    fill: linear-gradient(90deg, gold 50%, lightgray 50%);
+  }
+  
+  /* .logo {
+    background-image: url('./loc-logo.png');
+    height: 70px;
+    width: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  } */
+  
+  .flex-container {
+    display: flex;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }

@@ -5,6 +5,7 @@ import About from './components/About';
 import Login from './components/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import Accordion from './components/Accordion';
+import StarRating from './components/StarRating/StarRating';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <a href='/team'>Team</a>
           <a href='/accordion'>Accordion</a>
           <a href='/login'>Login</a>
+          <a href='/star'>Star</a>
         </nav>
       </header>
       <BrowserRouter>
@@ -27,6 +29,7 @@ function App() {
           </Route>
           <Route path='/login' element={<Login />}></Route>
           <Route path='/accordion' element={<Accordion />}></Route>
+          <Route path='/star' element={<StarRating />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
