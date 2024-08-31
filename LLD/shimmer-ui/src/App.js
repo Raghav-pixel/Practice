@@ -7,6 +7,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Accordion from './components/Accordion';
 import StarRating from './components/StarRating/StarRating';
 import Comments from './components/comments/Comments';
+import ImageSlider from './components/ImageSlider/ImageSlider';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <a href='/login'>Login</a>
           <a href='/star'>Star</a>
           <a href='/comments'>Comments</a>
+          <a href='/image-slider'>Image-Slider</a>
         </nav>
       </header>
       <BrowserRouter>
@@ -33,6 +35,7 @@ function App() {
           <Route path='/accordion' element={<Accordion />}></Route>
           <Route path='/star' element={<StarRating />}></Route>
           <Route path='/comments' element={<Comments />}></Route>
+          <Route path='/image-slider' element={<ImageSlider />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
