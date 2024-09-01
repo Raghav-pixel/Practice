@@ -1,0 +1,20 @@
+.pagination-ctr {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.pages-indexing-ctr {
+    display: flex;
+    align-items: center;
+}
+
+.page-no {
+    background-color: white;
+    color: black;
+}
+
+.page-no-fill {
+    background-color: black;
+    color: white;
+}
