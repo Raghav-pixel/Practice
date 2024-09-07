@@ -27,8 +27,6 @@ var nameList = [
     'Legacy','Sharp','Dead','Mew','Chuckle','Bubba','Bubble','Sandwich','Smasher','Extreme','Multi','Universe','Ultimate','Death','Ready','Monkey','Elevator','Wrench','Grease','Head','Theme','Grand','Cool','Kid','Boy','Girl','Vortex','Paradox'
 ];
 
-var finalName = ""
-
 function generateRandomNames() {
    var finalName = nameList[Math.floor( Math.random() * nameList.length )];
    return finalName;
@@ -36,6 +34,7 @@ function generateRandomNames() {
 
 const ChatWindow = () => {
     const [messages, setMessages] = useState([])
+    const [inputValue, setInputValue] = useState('');
 
     const fetchData = () => {
         const data = [
@@ -58,11 +57,31 @@ const ChatWindow = () => {
 
         return () => clearInterval(interval);
     }, []);
+
+    const handleSend = () => {
+        setMessages((messages) => 
+            [
+                {
+                    id: 'r-2',
+                    name: 'Raghav',
+                    photo: "https://yt4.ggpht.com/ytc/AIdro_kDRQPhJSlRLHo_-DXQg2a4b4X-P-Qgl6np58QME0EV8lw=s64-c-k-c0x00ffffff-no-rj",
+                    message: inputValue,
+                },
+                ...messages,
+            ]
+    )
+    }
   return (
-    <div style={{ width: "100%", height: "600px", border: '1px solid black', margin: '5px', overflow: 'scroll', display: 'flex', flexDirection: 'column-reverse' }}>
-        {messages.map((messageObj, idx) => (
-            <ChatMessage key={idx} {...messageObj} />
-        ))}
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ width: "100%", height: "600px", border: '1px solid black', margin: '5px', overflow: 'scroll', display: 'flex', flexDirection: 'column-reverse' }}>
+            {messages.map((messageObj, idx) => (
+                <ChatMessage key={idx} {...messageObj} />
+            ))}
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+            <input style={{ width: "100%", margin: '5px' }} type='text' onChange={(e) => setInputValue(e.target.value)}  />
+            <button onClick={handleSend}>Send</button>
+        </div>
     </div>
   )
 }
