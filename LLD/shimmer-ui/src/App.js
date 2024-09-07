@@ -9,6 +9,7 @@ import StarRating from './components/StarRating/StarRating';
 import Comments from './components/comments/Comments';
 import ImageSlider from './components/ImageSlider/ImageSlider';
 import Pagination from './components/Pagination/Pagination';
+import LiveChat from './components/LiveChat/LiveChat';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <a href='/comments'>Comments</a>
           <a href='/image-slider'>Image-Slider</a>
           <a href='/pagination'>Pagination</a>
+          <a href='/live-chat'>Live Chat</a>
         </nav>
       </header>
       <BrowserRouter>
@@ -39,6 +41,7 @@ function App() {
           <Route path='/comments' element={<Comments />}></Route>
           <Route path='/image-slider' element={<ImageSlider />}></Route>
           <Route path='/pagination' element={<Pagination />}></Route>
+          <Route path='/live-chat' element={<LiveChat />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
