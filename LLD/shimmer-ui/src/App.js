@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css';
 import Body from './components/Body';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -11,8 +12,21 @@ import ImageSlider from './components/ImageSlider/ImageSlider';
 import Pagination from './components/Pagination/Pagination';
 import LiveChat from './components/LiveChat/LiveChat';
 import SearchUi from './components/SearchUi/SearchUi';
+import FolderStructure from './components/FolderStructure/FolderStructure';
+import folderData from './data/FolderData';
 
 function App() {
+  const [folderState, setFolderState] = useState({});
+
+  const handleToggle = (path) => {
+    setFolderState((prev) => {
+      return {
+        ...prev,
+        [path]: !prev[path],
+      };
+    })
+  }
+console.log(folderState, "folderState")
   return (
     <div className="App">
       <header className='header'>
@@ -29,6 +43,7 @@ function App() {
           <a href='/pagination'>Pagination</a>
           <a href='/live-chat'>Live Chat</a>
           <a href='/search-ui'>Search UI</a>
+          <a href='/folder'>Folder</a>
         </nav>
       </header>
       <BrowserRouter>
@@ -45,6 +60,7 @@ function App() {
           <Route path='/pagination' element={<Pagination />}></Route>
           <Route path='/live-chat' element={<LiveChat />}></Route>
           <Route path='/search-ui' element={<SearchUi />}></Route>
+          <Route path='/folder' element={<FolderStructure folderData={folderData} folderState={folderState} folderToggle={handleToggle} currentPath="" />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

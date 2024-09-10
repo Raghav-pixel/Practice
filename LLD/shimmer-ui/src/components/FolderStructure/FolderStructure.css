@@ -1,0 +1,4 @@
+.folder-structure-ctr {
+    display: flex;
+    flex-direction: column;
+}
