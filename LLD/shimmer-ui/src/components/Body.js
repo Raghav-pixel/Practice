@@ -9,10 +9,21 @@ const Body = () => {
     useEffect(() => {
         fetchMemes();
 
-        window.addEventListener('scroll', handleScroll);
+        const throttledScroll = throttling(handleScroll, 500)
+        window.addEventListener('scroll', throttledScroll);
 
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', throttledScroll);
     }, []);
+
+    function throttling(fn , wait) {
+        let prev = 0;
+        return function(...args) {
+            let curr = new Date().getTime();
+            if(curr-prev < wait) return;
+            prev = curr;
+            return fn(...args);
+        }
+    }
 
     const handleScroll = () => {
         // window.scrollY -> height of window that is scrolled so far
