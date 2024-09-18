@@ -11,6 +11,18 @@ Function.prototype.myBind = function(obj={}, ...args) {
     }
 }
 
+// const obj = {
+//     x: 42,
+//     getX: function() {
+//         return this.x;
+//     }
+// }
+
+// const unboundGetX = obj.getX;
+// console.log(unboundGetX);
+// const boundedGetX = unboundGetX.bind(obj);
+// console.log(boundedGetX())
+
 // polyfill for call
 
 Function.prototype.myCall = function(context={}, ...args) {
