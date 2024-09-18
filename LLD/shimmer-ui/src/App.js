@@ -14,6 +14,7 @@ import LiveChat from './components/LiveChat/LiveChat';
 import SearchUi from './components/SearchUi/SearchUi';
 import FolderStructure from './components/FolderStructure/FolderStructure';
 import folderData from './data/FolderData';
+import DataGrid from './components/DataGrid/DataGrid';
 
 function App() {
   const [folderState, setFolderState] = useState({});
@@ -44,6 +45,7 @@ console.log(folderState, "folderState")
           <a href='/live-chat'>Live Chat</a>
           <a href='/search-ui'>Search UI</a>
           <a href='/folder'>Folder</a>
+          <a href='/data-grid'>Data Grid</a>
         </nav>
       </header>
       <BrowserRouter>
@@ -61,6 +63,7 @@ console.log(folderState, "folderState")
           <Route path='/live-chat' element={<LiveChat />}></Route>
           <Route path='/search-ui' element={<SearchUi />}></Route>
           <Route path='/folder' element={<FolderStructure folderData={folderData} folderState={folderState} folderToggle={handleToggle} currentPath="" />}></Route>
+          <Route path='/data-grid' element={<DataGrid />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
